@@ -114,6 +114,26 @@ class Menu {
             }
         }
     }
+
+    deleteTeam() {
+        let index = prompt('Enter the name of the champion that you wish to delete:');
+        if (index > -1 && index < this.teams.length) {
+            this.teams.splice(index, 1);
+        }
+    }
+
+    createPlayer(){
+        let name = prompt('Enter the Champion name:');
+        let position = prompt('Enter the Champion role:');
+        this.selectedTeam.teamChampions.push(new this.createPlayer(name, position));
+    }
+
+    deletePlayer () {
+        let index = prompt('Enter the name of the Champion that you wish to delete:');
+        if (index > -1 && index < this.selectedTeam.teamChampions.length) {
+            this.selectedTeam.teamChampions.splice(index, 1);
+        }
+    }
 }
 
 let menu = new Menu();
