@@ -70,14 +70,14 @@ class Menu {
         `);
     }
     
-    showMainMenuOptions(teamInfo) {
+    showTeamMenuOptions(teamInfo) {
         return prompt(`
             0) back
             1) create player
             2) delete player
             -----------------------
             ${teamInfo}
-        `)
+        `);
     }
 
     displayCom() {
