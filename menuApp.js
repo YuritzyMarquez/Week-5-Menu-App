@@ -64,9 +64,9 @@ class Menu {
         return prompt(`
             0) exit
             1) create team
-            2) select champion
+            2) view comp 
             3) delete team
-            4) view comp
+            4) select champion
         `);
     }
     
@@ -80,12 +80,12 @@ class Menu {
         `);
     }
 
-    displayCom() {
+    selectChampion() {
         let compString = '';
         for (let i = 0; i < this.teams.length; i++) {
             compString += i + ')' + this.teams[i].name + '\n';
         }
-        alert(teamString);
+        alert(compString);
     }
 
     createTeam() {
@@ -93,7 +93,7 @@ class Menu {
         this.teams.push(new Team(name));
     }
 
-    viewTeam() {
+    viewComp() {
         let index = prompt('Enter the Clan name of the team you wish to see:');
         if (index > -1 && index < this.teams.length) {
             this.selectedTeam = this.teams[index];
@@ -122,10 +122,10 @@ class Menu {
         }
     }
 
-    createPlayer(){
+    createPlayer() {
         let name = prompt('Enter the Champion name:');
         let position = prompt('Enter the Champion role:');
-        this.selectedTeam.teamChampions.push(new this.createPlayer(name, position));
+        this.selectedTeam.teamChampions.push(new Character(name, position));
     }
 
     deletePlayer () {
